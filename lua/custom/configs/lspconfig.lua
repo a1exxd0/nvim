@@ -2,21 +2,22 @@ local base = require("nvchad.configs.lspconfig")
 local on_attach = base.on_attach
 local capabilities = base.capabilities
 
-local lspconfig = require("lspconfig")
-
-lspconfig.clangd.setup {
+-- clangd
+vim.lsp.config("clangd", {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-}
+})
 
-lspconfig.rust_analyzer.setup({
+-- rust-analyzer
+vim.lsp.config("rust_analyzer", {
   capabilities = capabilities,
 })
 
-lspconfig.basedpyright.setup({
+-- basedpyright
+vim.lsp.config("basedpyright", {
   settings = {
     basedpyright = {
       analysis = {
@@ -25,4 +26,3 @@ lspconfig.basedpyright.setup({
     }
   }
 })
-
