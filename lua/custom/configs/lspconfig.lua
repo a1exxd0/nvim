@@ -9,6 +9,9 @@ vim.lsp.config("clangd", {
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
+  init_options = {
+    fallbackFlags = { "-std=c++23" },
+  },
 })
 
 -- rust-analyzer
@@ -22,7 +25,8 @@ vim.lsp.config("basedpyright", {
     basedpyright = {
       analysis = {
         typeCheckingMode = "standard",
-      }
-    }
-  }
+      },
+    },
+  },
 })
+

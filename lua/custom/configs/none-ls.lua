@@ -31,6 +31,10 @@ local opts = {
         "markdown",
       },
     }),
+
+    null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.gofmt,
+    null_ls.builtins.diagnostics.golangci_lint,
   },
 
   on_attach = function(client, bufnr)
