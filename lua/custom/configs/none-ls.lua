@@ -6,7 +6,7 @@ local latexindent = {
   filetypes = { "tex" },
   generator = null_ls.formatter({
     command = "latexindent",
-    args = { "-g", "/dev/null" },
+    args = { "-y", os.getenv("HOME") .. "/.latexindent.yaml" },
     to_stdin = true,
   }),
 }
@@ -44,7 +44,12 @@ local opts = {
         group = augroup,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.format({ bufnr = bufnr })
+          vim.lsp.buf.format({
+            bufnr = bufnr,
+            filter = function(client2)
+              return client2.name == "null.ls"
+            end,
+          })
         end,
       })
     end

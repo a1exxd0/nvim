@@ -30,3 +30,9 @@ vim.lsp.config("basedpyright", {
   },
 })
 
+require("typescript-tools").setup({})
+vim.lsp.config("typescript-tools", {
+  settings = {
+    separate_diagnostics_server = false,
+  },
+})
