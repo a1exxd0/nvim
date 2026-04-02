@@ -11,3 +11,10 @@ vim.keymap.set("n", "<leader>v", function()
 end, { desc = "Vertical terminal" })
 
 vim.keymap.set("t", "<C-t>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
+
+vim.keymap.set("n", "<leader>h", function()
+  vim.cmd("split | terminal")
+  local height = math.floor(vim.o.lines * 0.3)
+  vim.cmd("resize " .. height)
+  vim.cmd("startinsert")
+end, { desc = "Horizontal terminal (30%)" })
