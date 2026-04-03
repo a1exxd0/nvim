@@ -2,6 +2,7 @@
 require("config.lazy")
 
 vim.o.mouse = "a"
+
 vim.g.clipboard = {
   name = "OSC 52",
   copy = {
