@@ -1,4 +1,8 @@
-# 💤 LazyVim
+# My plug-and-play neovim config
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+Super lightweight. Portable. 
+
+I do work in:
+- Rust
+- C++
+- Python (not notebooks)
